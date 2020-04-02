@@ -1,0 +1,59 @@
+Trabajo_Git_Hub
+
+INTRODUCCIÓN:
+ 	¿Qué es y para qué sirve?
+Según wikipedia "GitHub es una forja para alojar proyectos utilizando el sistema de control de versiones Git. Se utiliza principalmente para la creación de código fuente de programas de ordenador."
+
+	Historia
+Github fue desarrollado por Chris Wanstrath, Tom Preston-Werner y Scott Chacon usando Ruby on Rails, un framework de aplicaciones web de código abierto
+escrito en el lenguaje de programación Ruby, en 2008.
+GitHub fue acumulando repositorios de una manera rápida progresivamente durante los años hasta que en 2011 pudo superar a SourceForce y Google Code, la competencia, en total de commits. Esta empresa tuvo tanto éxito que incluso  se decía que los beneficios de GitHub habían crecido hasta un 300% desde su creación, alcanzando en 2015 la valoración de la empresa a 2 billones de dólares. En 2018 fue víctima del segundo mayor ataque DDoS y al final de todo Microsoft compró Github por 7.5 millones de dólares.
+
+-	Framework: Entorno de trabajo que estandariza conceptos y prácticas para resolver problemas de una base similar.
+-	Ataque DoS: También conocido como ataque de negación de servicio, por sus siglas en Inglés (Denial of Service), es un ataque a un sistema de computadoras o red, que causa que un servicio o recurso sea inaccesible por los otros usuarios. Normalmente provoca la pérdida de la conectividad con la red por el consumo del ancho de banda de la red de la víctima o sobrecarga de los recursos computacionales del sistema. Una ampliación del ataque DoS es el llamado ataque de denegación de servicio distribuido, también llamado DDoS (por sus siglas en inglés, Distributed Denial of Service) el cual se lleva a cabo generando un gran flujo de información desde varios puntos de conexión hacia un mismo punto de destino, mediante el uso de una red de bots normalmente.
+COMANDOS BÁSICOS DE GIT:
+Git es una herramienta que interactúa con el sistema operativo que se puede utilizar mediante la consola. Git instala un bash, una terminal que tiene los mismos conceptos de unix, de linux.
+En git se subdividen 3 zonas:
+-	El llamado "Working directory" o directorio de trabajo, donde vamos a estar trabajando con nuestros archivo.
+-	"Staging area"  o área de ensayo  donde se pueden agregar los archivos que vamos a preparar para el guardado, de los cuales podremos ver los cambios que se ha ido haciedo.
+-	"Repository" o repositorio es la zona que se va a utilizar cuando se quiere guardar el cambio de manera permanente  pasa a esta área.
+
+-	git init: Crear un proyecto nuevo o que se va a usar uno ya hecho pero que se va a utilizar con git 
+-	git add <archivo>: Para poder pasar los archivos del working directory al staging area
+-	git status: En qué estado están nuestro archivos(working directory, staging area o repository)
+-	git commit: Para pasar el archivo del staging area al repositorio, para crear una foto de la versión del código.
+-	git push: Para subir el archivo a un repositorio remoto para que pueda ser accedido por otros desarrolladores con permisos para modificar el archivo.
+-	git pull: Te traen los cambios que han hecho otros desarrolladores con los que puedas estar trabajando
+-	git clone: Te hace una copia desde el servidor central, donde está el código, a tu pc
+
+INSTALACIÓN GIT
+1-	sudo apt-get update: Actualiza el repositorio
+2-	sudo apt-get upgrade: Actualiza a la última versión de los programas que  tengas instalados
+3-	sudo apt get-install git: 
+4-	git init
+5-	git add <nombre_del_archivo> //// .
+6-	git status
+7- 	git commit <nombre_del_archivo>
+8-	git config --global user.email "ejemplo@ejemplo.com "
+9-	git config --global user.name "Pedro.S"
+10-	git log para ver los hash de cada versión que se haya hecho commit
+11-	git checkout --<nombre_del_archivo> : Se utiliza para restaurar los cambios hasta el ultimo commit
+12-	git diff  <nombre_del_archivo>: Para ver los cambios que se han hecho.
+13-Para que ignore los archivos que quieras se ha de crear un escritorio con el nombre de .gitignore 
+14-Para que se añadan todos los archivos que hay en en el status  se puede hacer con el comando: git add .
+15-Para crear otras versiones de tus códigos se hace con el comado: git branch <nombre>. 
+16-Para acceder a los otros brach se hace el comando: git checkout <nombre>.
+17-Para ver todos los branch que hay creados se hace un: git branch
+18-Se mantienen todos los archivos que están en el original, y si se añaden archivos nuevos o se modifican los archivos de la original, no afectan a la original, es decir solo se altera de manera "local"
+19-Subir nuestro código a un repositorio para que otros desarrolladores o los que elijamos tengan acceso a él y puedan modificarlo con el comando:
+git remote add origin https://github.com/ThePitM4ster/git_tutorial.git
+20-git push -u origin master
+21-Una vez subido este se puede borrar del sistema y se puede volver a descargar en un zip o con la url mediante el comando:
+git clone https://github.com/ThePitM4ster/git_tutorial.git
+
+
+El ^ del final de la cabecera le indica a Git que el punto de la historia en donde deseas  dejarla (resetearla), es el padre del último commit en la rama actual (que se llama siempre HEAD). Es importante indicarlo.
+git reset HEAD^ --hard:
+Si lo único que necesitas es eliminar este último commit y empezar de nuevo solo tienes que abrir una línea de comandos  en la carpeta del repositorio y escribir
+
+git reset HEAD^ --soft:Lo anterior será lo que desees hacer en muchos casos, pero en muchos otros no. A lo mejor lo que necesitas corregir está en un solo archivo y los cambios de los demás te parecen bien. En estos casos está bien eliminar el commit pero al mismo tiempo evitar perder los cambios. Conseguirlo es casi idéntico a lo anterior, y solo debes escribir:
